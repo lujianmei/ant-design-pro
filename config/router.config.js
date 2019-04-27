@@ -32,21 +32,70 @@ export default [
         routes: [
           {
             path: '/dashboard/analysis',
-            name: 'analysis',
+            name: 'resource-analysis',
             component: './Dashboard/Analysis',
           },
           {
             path: '/dashboard/monitor',
-            name: 'monitor',
+            name: 'waterlevel-monitor',
             component: './Dashboard/Monitor',
           },
           {
             path: '/dashboard/workplace',
-            name: 'workplace',
+            name: 'risk-monitor',
             component: './Dashboard/Workplace',
           },
         ],
       },
+      // resource-center
+      { path: '/resource-center', redirect: '/dashboard/analysis', authority: ['admin', 'user'] },
+      {
+        path: '/resource-center',
+        name: 'resource-center',
+        icon: 'dashboard',
+        routes: [
+          {
+            path: '/resource-center/ecs',
+            name: 'ecs',
+            component: './Dashboard/Analysis',
+          },
+          {
+            path: '/resource-center/oss',
+            name: 'oss',
+            component: './Dashboard/Monitor',
+          },
+          {
+            path: '/resource-center/rds',
+            name: 'rds',
+            component: './Dashboard/Workplace',
+          },
+        ],
+      },
+      // resource-manager
+      { path: '/resource-manager', redirect: '/dashboard/analysis', authority: ['admin', 'user'] },
+      {
+        path: '/resource-manager',
+        name: 'resource-manager',
+        icon: 'dashboard',
+        routes: [
+          {
+            path: '/resource-manager/monitor-manage',
+            name: 'monitor-manage',
+            component: './Dashboard/Analysis',
+          },
+          {
+            path: '/resource-manager/waterlevel-monitor',
+            name: 'waterlevel-monitor',
+            component: './Dashboard/Monitor',
+          },
+          {
+            path: '/resource-manager/warning-manage',
+            name: 'warning-manage',
+            component: './Dashboard/Workplace',
+          },
+        ],
+      },
+
       // forms
       {
         path: '/form',
