@@ -95,6 +95,278 @@ export default [
           },
         ],
       },
+      // bill-center
+      {
+        path: '/bill-center',
+        icon: 'table',
+        name: 'bill-center',
+        routes: [
+          {
+            path: '/bill-center/overview',
+            name: 'overview',
+            component: './List/TableList',
+          },
+          {
+            path: '/bill-center/resource-bill',
+            name: 'resource-bill',
+            component: './List/BasicList',
+          },
+          // {
+          //   path: '/bill-center/resource-analysis',
+          //   name: 'resource-analysis',
+          //   component: './List/CardList',
+          // },
+          {
+            path: '/bill-center/resource-analysis',
+            name: 'resource-analysis',
+            component: './List/List',
+            routes: [
+              {
+                path: '/bill-center/resource-analysis',
+                redirect: '/bill-center/resource-analysis/region',
+              },
+              {
+                path: '/bill-center/resource-analysis/region',
+                name: 'region',
+                component: './List/Articles',
+              },
+              {
+                path: '/bill-center/resource-analysis/projects',
+                name: 'projects',
+                component: './List/Projects',
+              },
+              {
+                path: '/bill-center/resource-analysis/departments',
+                name: 'departments',
+                component: './List/Applications',
+              },
+              {
+                path: '/bill-center/resource-analysis/products',
+                name: 'products',
+                component: './List/Applications',
+              },
+            ],
+          },
+        ],
+      },
+      // operation-center
+      {
+        path: '/operation-center',
+        icon: 'table',
+        name: 'operation-center',
+        routes: [
+          {
+            path: '/operation-center/resource-apply',
+            name: 'resource-apply',
+            component: './List/TableList',
+          },
+          {
+            path: '/operation-center/operation-order',
+            name: 'operation-order',
+            component: './List/BasicList',
+          },
+          // {
+          //   path: '/bill-center/resource-analysis',
+          //   name: 'resource-analysis',
+          //   component: './List/CardList',
+          // },
+          {
+            path: '/operation-center/operation-weekly-report',
+            name: 'operation-weekly-report',
+            component: './List/List',
+            routes: [
+              {
+                path: '/operation-center/operation-weekly-report',
+                redirect: '/operation-center/operation-weekly-report/resources',
+              },
+              {
+                path: '/operation-center/operation-weekly-report/resources',
+                name: 'resources',
+                component: './List/Articles',
+              },
+              {
+                path: '/operation-center/operation-weekly-report/costs',
+                name: 'costs',
+                component: './List/Projects',
+              },
+              {
+                path: '/operation-center/operation-weekly-report/risks',
+                name: 'risks',
+                component: './List/Applications',
+              },
+            ],
+          },
+        ],
+      },
+
+      // report-center
+      {
+        path: '/report-center',
+        icon: 'table',
+        name: 'report-center',
+        routes: [
+          {
+            path: '/report-center/resource',
+            name: 'resource',
+            component: './List/TableList',
+            routes: [
+              {
+                path: '/report-center/resource',
+                redirect: 'report-center/resource/used',
+              },
+              {
+                path: '/report-center/resource/used',
+                name: 'used',
+                component: './List/Projects',
+              },
+              {
+                path: '/report-center/resource/waterlevel',
+                name: 'waterlevel',
+                component: './List/Projects',
+              },
+              {
+                path: '/report-center/resource/quota',
+                name: 'quota',
+                component: './List/Projects',
+              },
+              {
+                path: '/report-center/resource/cost-benifit-analysis',
+                name: 'cost-benifit-analysis',
+                component: './List/Projects',
+              },
+              {
+                path: '/report-center/resource/used-analysis',
+                name: 'used-analysis',
+                component: './List/Projects',
+              },
+              {
+                path: '/report-center/resource/phsical-using-analysis',
+                name: 'phsical-using-analysis',
+                component: './List/Projects',
+              },
+            ],
+          },
+          {
+            path: '/report-center/operation',
+            name: 'operation',
+            component: './List/TableList',
+            routes: [
+              {
+                path: '/report-center/operation',
+                redirect: 'report-center/operation/alert',
+              },
+              {
+                path: '/report-center/operation/alert',
+                name: 'alert',
+                component: './List/Projects',
+              },
+              {
+                path: '/report-center/operation/resource-monitor',
+                name: 'resource-monitor',
+                component: './List/Projects',
+              },
+            ],
+          },
+          {
+            path: '/report-center/projects',
+            name: 'projects',
+            component: './List/TableList',
+            routes: [
+              {
+                path: '/report-center/projects',
+                redirect: 'report-center/projects/departments',
+              },
+              {
+                path: '/report-center/resource/departments',
+                name: 'departments',
+                component: './List/Projects',
+              },
+              {
+                path: '/report-center/resource/projects-resources',
+                name: 'projects-resources',
+                component: './List/Projects',
+              },
+              {
+                path: '/report-center/resource/projects-costs',
+                name: 'projects-costs',
+                component: './List/Projects',
+              },
+            ],
+          },
+          {
+            path: '/report-center/resource-sales',
+            name: 'resource-sales',
+            component: './List/TableList',
+            routes: [
+              {
+                path: '/report-center/resource-sales',
+                redirect: 'report-center/resource-sales/sales-analysis',
+              },
+              {
+                path: '/report-center/resource-sales/sales-analysis',
+                name: 'sales-analysis',
+                component: './List/Projects',
+              },
+              {
+                path: '/report-center/resource-sales/oversold-analysis',
+                name: 'oversold-analysis',
+                component: './List/Projects',
+              },
+            ],
+          },
+        ],
+      },
+
+      // basicinfo-manage
+      {
+        path: '/basicinfo-manage',
+        icon: 'table',
+        name: 'basicinfo-manage',
+        routes: [
+          {
+            path: '/basicinfo-manage/users',
+            name: 'users',
+            component: './List/TableList',
+          },
+          {
+            path: '/basicinfo-manage/departments',
+            name: 'departments',
+            component: './List/BasicList',
+          },
+          {
+            path: '/basicinfo-manage/suppliers',
+            name: 'suppliers',
+            component: './List/BasicList',
+          },
+          {
+            path: '/basicinfo-manage/projects',
+            name: 'projects',
+            component: './List/BasicList',
+          },
+
+          {
+            path: '/basicinfo-maange/services',
+            name: 'services',
+            component: './List/List',
+            routes: [
+              {
+                path: '/basicinfo-manage/services',
+                redirect: '/basicinfo-manage/services/list',
+              },
+              {
+                path: '/basicinfo-manage/services/list',
+                name: 'list',
+                component: './List/Articles',
+              },
+              {
+                path: '/basicinfo-manage/services/price',
+                name: 'price',
+                component: './List/Articles',
+              },
+            ],
+          },
+        ],
+      },
 
       // forms
       {
